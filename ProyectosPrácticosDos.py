@@ -71,47 +71,54 @@
 # Objetivo: Practicar el manejo de cadenas de texto.
 # Conceptos clave: Métodos de cadenas, bucles, diccionarios (si quieres contar cuántas veces aparece cada palabra).
 
-def counter_world(text): #Recibe como argumento el texto en cuestión
-    worlds = text.split() #Devuelve una list con cada palabra como elemento ''
-    counter = {} #Creo un set/conjunto para guardar el númeor de palabras
-    for world in worlds:
-        if world in counter:
-            counter[world] += 1
-        else:
-            counter[world] = 1
-    return counter
+# def counter_world(text): #Recibe como argumento el texto en cuestión
+#     worlds = text.split() #Devuelve una list con cada palabra como elemento ''
+#     counter = {} #Creo un set/conjunto para guardar el númeor de palabras
+#     for world in worlds:
+#         if world in counter:
+#             counter[world] += 1
+#         else:
+#             counter[world] = 1
+#     return counter
 
-#print(counter_world('Hello, World! Hello, World! Hello, World!'))
+# #print(counter_world('Hello, World! Hello, World! Hello, World!'))
 
-#Crear un programa que busque una determinada palabra dada, dentro de un texto especifico
-def search_world(world,text):
-    split = text.split()
-    lista = set()
-    count = {}
-    for x in split:
-        if world.lower() in x.lower():
-            lista.add(x)
-            #count[x] += 1
-    return lista, count
+# #Crear un programa que busque una determinada palabra dada, dentro de un texto especifico
+# def search_world(world,text):
+#     split = text.split()
+#     lista = set()
+#     count = {}
+#     for x in split:
+#         if world.lower() in x.lower():
+#             lista.add(x)
+#             #count[x] += 1
+#     return lista, count
 
-print(search_world('Amor','Amor, amor, cariño, prosperidad, paz, alegria, exito'))
+# print(search_world('Amor','Amor, amor, cariño, prosperidad, paz, alegria, exito'))
 
-def buscar_palabra(archivo, palabra):
-    try:
-        with open(archivo, 'r', encoding='utf-8') as file:
-            lineas = file.readlines()
-            for numero, linea in enumerate(lineas, start=1):
-                if palabra in linea:
-                    print(f"Línea {numero}: {linea.strip()}")
-    except FileNotFoundError:
-        print(f"El archivo {archivo} no se encontró.")
-    except Exception as e:
-        print(f"Ocurrió un error: {e}")
+# def buscar_palabra(archivo, palabra):
+#     try:
+#         with open(archivo, 'r', encoding='utf-8') as file:
+#             lineas = file.readlines()
+#             for numero, linea in enumerate(lineas, start=1):
+#                 if palabra in linea:
+#                     print(f"Línea {numero}: {linea.strip()}")
+#     except FileNotFoundError:
+#         print(f"El archivo {archivo} no se encontró.")
+#     except Exception as e:
+#         print(f"Ocurrió un error: {e}")
 
-# Ejemplo de uso
-archivo = 'ejemplo.txt'
-palabra = 'Python'
-buscar_palabra(archivo, palabra)
+# # Ejemplo de uso
+# archivo = 'ejemplo.txt'
+# palabra = 'Python'
+# buscar_palabra(archivo, palabra)
+
+#Ejercicio adivinar la edad
+#Uso de módulo datetime
+#def age(year):
+import datetime as d
+now = d.datetime.now()
+coso = d.datetime.date()
 
 
 #Empresa solicita calcular días de vacaciones correspondientes a cada empleo según los siguientes parametros:

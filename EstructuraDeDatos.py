@@ -33,6 +33,16 @@ listaDeux = ['A','B','C','D','E']
 listaDeux.reverse()
 #Actualizar elementos
 lista[0] = 'Bonjour' #Asignando directamente el valor indicando indice a modificar
+lista.clear # elimina todos los elementos de la lista
+#Recorrer una lista
+#Bucle for
+for x in listaDeux: #recorre cada elemento por iteracción, donde x toma el valor del mismo
+    print(x)
+#Bucle while
+count = 0 #Creo un contador
+while count < len(listaDeux): #Mientras la condición se cumpla el ciclo se repetira, aquí le indico mientras que contador sea menor longuitud de la lista
+    print(listaDeux)
+    count += 1
 
 '''print(lista)
 print(cantidadItem)
@@ -42,15 +52,26 @@ print(newList)
 print(listaDeux)'''
 
 #Diccionarios {key:valor} par clave : valor, no repetidos, ordenados, modificables
-my_Dict = {'Salutation':'Bonjour','Questions':'Cooment allez vus?', 'Depart': 'Á plus tard'}
+my_Dict = {'Salutation':'Bonjour','Questions':'Comment allez vus?', 'Depart': 'Á plus tard', 'Formal': 'Bonjour madame','Informal': 'Coucou', 'Formalito': 'Bonjour madame'}
 #Actualizar
-my_Dict['Salutation'] = 'Salut' #Asignando directamente mediante key
+my_Dict['Salutation'] = 'Salut' #Asignando directamente mediante key, si la key no existe se agrega el nuevo elemento
 #Eliminar
 my_Dict.pop('Salutation') #Delete el par clave : valor mediante key, devuelve error si la key no existe
-my_Dict.popitem() #Elimina de forma aleatoria
+#my_Dict.popitem() #Elimina de forma aleatoria
 #Mostrar los items 
-newKey = my_Dict.items()
+newKey = my_Dict.items() #muestra los pares key: valuer
+#Recorrer diccionarios
+#Bucle for
+for key, value in my_Dict.items(): #Con el metodo items accedo a los pares key : valuer
+    print(f'La key es: {key}, con el valor: {value}')
+#Bucle while
+countador = 0
+while countador < len(my_Dict):
+    print(my_Dict.items())
+    countador += 1
 
+obtener = my_Dict.get('Formal') #Si la key no existe devuelve valor NONE
+print(f'Mediante método get obtengo: {obtener}')
 '''print(my_Dict)
 print(newKey)'''
 
@@ -60,21 +81,50 @@ my_Tupla = (5,'Andre', 'Montevideo')
 indice = my_Tupla[2]
 #Metodos
 contar = my_Tupla.count(5) #Identifica numero de veces que aparece el elemento
-'''print(my_Tupla.index(5))#Devuleve el indice dele lemento indicado
+#Recorrer tuplas
+#Bucle for
+for x in my_Tupla:
+    print(x)
+#Bucle while
+contador = 0
+while contador < len(my_Tupla):
+    print(my_Tupla)
+    contador += 1
+'''print(my_Tupla.index(5))#Devuleve el indice del  elemento indicado
 print(my_Tupla)
 print(indice)
 print(contar)'''
 
 #Set o conjuntos {} no ordenados, modificables, no repetidos
 my_set = {29,'Montevideo',333, True, 29}
+#Recorrer sets
+#Bucle for
 for x in my_set:
     print(x)
 #Agregar elementos
 my_set.add('Bonjour')
 #Eliminar elementos
-my_set.pop() #elimina elemento aleatorio ya que no tiene un orden establecido
+#my_set.pop() #elimina elemento aleatorio ya que no tiene un orden establecido
 '''print(my_set)'''
-
+#my_set.clear #Elimina todos los elementos
+my_set.remove('Montevideo') #Elimina elemento indicado, si no existe da erro para el programa
+print(my_set)
 #Dificultad extra
-my_contacts = {}
-#def insert_contact(contact):
+#Gestor de tareas simple usando listas
+tareas = [] #Creo una lista para agregar/eliminar tareas
+def my_tarea():
+    acción = int(input('Indica acción a realizar:\n1) Agregar Tarea\n2) Eliminar Tarea\n'))
+    match acción:
+        case 1:
+            tarea = input('Indica la tarea a realizar:\n')
+            tareas.append(tarea)
+        case 2:
+            delete = input('Indica la tarea a eliminar:\n')
+            if delete in tareas:
+                tareas.remove(delete)
+            else:
+                print('La tarea indicada no se encuentra en la lista de pendientes')
+    return tareas
+
+    
+print(my_tarea())
