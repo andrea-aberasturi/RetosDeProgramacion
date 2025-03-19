@@ -42,18 +42,3 @@ except:
 #     print('Table created successfully')
 # except:
 #     print('Error!')
-
-# create_orders_table = """CREATE TABLE Orders (
-# OrderID INT,
-# TableNo INT,
-# MenuID INT,
-# BookingID INT,
-# BillAmount INT,
-# Quantity INT,
-# PRIMARY KEY (OrderID,TableNo)
-# );"""
-# try:
-#     connection.execute(create_orders_table)
-#     print('Table created successfully')
-# except:
-#     print('Error')
