@@ -112,4 +112,54 @@ def my_juex():
             print('Ingrese un número entero por favor!')
     print(f'Felicitaciones adivinaste el número! {num}')
 
-my_juex()
+#my_juex()
+
+#Ejercicios compresión de listas
+'''Ejercicio 1: Crear una lista de cuadrados
+Instrucción: Crea una lista de los primeros 10 números enteros (del 0 al 9) al cuadrado usando comprensión de listas.'''
+lista_cuadrados = [num*num for num in range(0,10)]
+#print(lista_cuadrados)
+
+'''Ejercicio 2: Filtrar números pares
+Instrucción: Dada una lista de números, usa comprensión de listas para filtrar solo los números pares.'''
+valores = [1,6,5,78,30,3,99,105,15478,2036547,10,7]
+pares = [num for num in valores if num % 2 == 0]
+#print(pares)
+
+'''Ejercicio 3: Transformar cadenas a mayúsculas
+Instrucción: Dada una lista de cadenas, utiliza comprensión de listas para convertir todas las cadenas a mayúsculas.'''
+strings = ['Hola', 'Soy','Una','Lista','de','strings']
+mayuscula = [word.upper() for word in strings]
+#print(mayuscula)
+
+'''Ejercicio 4: Crear una lista de tuplas
+Instrucción: Dada una lista de números, utiliza comprensión de listas para crear una lista de tuplas donde el primer elemento sea el número y el segundo el cuadrado de ese número.'''
+numeritos = [54,87,6,32,10,0,78,9998,10247]
+numerito_al_cuadrado = []
+recorrido = [(num,num**2) for num in numeritos]
+#print(recorrido)
+
+'''Ejercicio 5: Filtrar palabras largas
+Instrucción: Dada una lista de palabras, usa comprensión de listas para filtrar las que tengan más de 4 caracteres.'''
+words_list = ['Soy','Una','Lista','De','Palabras']
+filtro_words = [word for word in words_list if len(word) > 4]
+#print(filtro_words)
+
+'''Ejercicio 6: Multiplicar elementos de dos listas
+Instrucción: Dadas dos listas de números, usa comprensión de listas para crear una nueva lista que contenga el producto de los elementos con el mismo índice de ambas listas.'''
+list_num_one = [12,555,98,5,96,6,3,47]
+list_num_two = [654,8,9,6,5265,78,20,3,52]
+new_list = [x*y for x,y in zip(list_num_one,list_num_two)]
+#print(new_list)
+
+'''Ejercicio 7: Extraer números de una cadena
+Instrucción: Dada una lista de cadenas, usa comprensión de listas para extraer solo aquellos que contienen números.'''
+word_list = ['Hola1','125','es','856','cadena']
+solo_num = [string for string in word_list if any(caracter.isdigit() for caracter in string)]
+#print(solo_num)
+
+'''Ejercicio 8: Generar una lista de listas
+Instrucción: Usa comprensión de listas para crear una lista de listas que contenga los primeros 3 múltiplos de cada número en una lista de números.'''
+numbers_list = [12,25,54,9,30,7,85,12]
+multiplos_list = [[num * i for i in range(1,4)] for num in numbers_list]
+print(multiplos_list)
