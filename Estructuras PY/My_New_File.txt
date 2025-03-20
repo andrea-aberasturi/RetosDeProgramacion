@@ -1,0 +1,6 @@
+This is an example
+Im been created of Python (:This is a new line
+
+This is a new line with flag "a" And this also is the new line
+
+This is a new line with flag "a" And this also is the new line
